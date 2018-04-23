@@ -17,9 +17,12 @@ death = datetime(2074, 1, 2)
 today = datetime.now()
 life_seconds = (death - birth).total_seconds()
 left_seconds = (death - today).total_seconds()
+left_percentage = left_seconds / life_seconds * 100
+lefts = [(left_seconds / 86400, 'days'),
+         (left_seconds / 3600, 'hours'),
+         (left_seconds / 60, 'minutes')]
 
-print('{:.0f}% :skull:'.format(left_seconds / life_seconds * 100))
+print('{0:.0f}% :skull:'.format(left_percentage))
 print('---')
-print('{:,d} days left | color=red'.format(int(left_seconds / (3600 * 24))))
-print('{:,d} hours left | color=red'.format(int(left_seconds / 3600)))
-print('{:,d} minutes left | color=red'.format(int(left_seconds / 60)))
+for time_left, time_span in lefts:
+    print('{0:,d} {1:s} left | color=red'.format(int(time_left), time_span))
