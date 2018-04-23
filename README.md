@@ -6,6 +6,7 @@ A [BitBar](https://getbitbar.com/) plugin that displays how much life you have l
 
 # Requirements
 - [BitBar](https://getbitbar.com/)
+- [Python 2 or 3](https://www.python.org/downloads/)
 
 # Installation
 - Clone repository.
